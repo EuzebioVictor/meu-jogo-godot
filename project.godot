@@ -1,0 +1,13 @@
+; Arquivo de configuração do projeto Godot.
+; Abra esta pasta no Godot 4 (Importar → project.godot); o editor completa o restante.
+
+config_version=5
+
+[application]
+
+config/name="Meu Jogo"
+run/main_scene=""
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
