@@ -3,9 +3,11 @@
 Cada marco termina com algo **jogável** e um commit/tag.
 
 ## Marco 0 — Fundação
-- [ ] Projeto abre sem erros, Input Map configurado
-- [ ] Cena `main` com troca de cena simples
-- [ ] GUT instalado e um teste de exemplo passando
+- [x] Projeto abre sem erros, Input Map configurado
+- [x] Cena `main` → menu principal → fase placeholder, com transição de fade
+- [x] Menu de pausa
+- [x] Autoloads base (EventBus, GameState, SceneManager, AudioManager)
+- [x] GUT instalado, 10 testes passando, CI configurado
 
 ## Marco 1 — Protótipo do core loop (placeholders)
 - [ ] Personagem controlável

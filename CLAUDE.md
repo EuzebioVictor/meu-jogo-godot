@@ -3,7 +3,7 @@
 Instruções para o Claude Code neste projeto. Responda e comente em **português**.
 
 ## Projeto
-Jogo em **Godot 4.x** (versão exata: PREENCHER) usando **GDScript**.
+Jogo em **Godot 4.7.2-stable** usando **GDScript**.
 Antes de implementar algo, consulte:
 - `docs/01-GDD.md`: o que é o jogo
 - `docs/02-ESCOPO.md`: o que está ou não no escopo (não implemente features de fora do escopo sem perguntar)
@@ -23,10 +23,18 @@ Antes de implementar algo, consulte:
 - Pode criar e editar `.tscn`/`.tres` em texto, mas mantenha-os simples. Para layouts visuais complexos (UI, tilemaps), prefira criar a estrutura mínima e indicar ao usuário o que ajustar no editor.
 - Ao referenciar recursos, use caminhos `res://` que existam de fato.
 
+## Estrutura já existente
+- Autoloads: `EventBus` (sinais globais), `GameState` (pontuação/pausa), `SceneManager.change_scene(path)` (troca com fade), `AudioManager` (música/SFX nos buses Music e SFX).
+- Fluxo: `scenes/main/main.tscn` → `scenes/ui/main_menu.tscn` → `scenes/levels/level_template.tscn` (placeholder com `PauseMenu`).
+- Componente de exemplo: `scripts/components/health_component.gd`.
+- Ações do Input Map: `move_left`, `move_right`, `move_up`, `move_down`, `jump`, `interact`, `pause`.
+- Camadas de física 2D: 1 world, 2 player, 3 enemies, 4 pickups, 5 hitbox, 6 hurtbox.
+
 ## Verificação
-- Checar erros de parse/carregamento: `godot --headless --quit`
-- Rodar testes (GUT): `godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://tests -gexit`
-- Lint/format (se instalado): `gdlint scripts scenes` e `gdformat --check scripts scenes`
+- **Verificação completa (rode antes de concluir qualquer tarefa):** `./tools/check.sh` (importa, procura erros, roda gdlint/gdformat e os testes GUT)
+- Só testes: `godot --headless -s addons/gut/gut_cmdln.gd -gconfig=.gutconfig.json`
+- Novos testes vão em `tests/unit/test_*.gd` (estendem `GutTest`). Escreva testes para lógica pura (componentes, regras, cálculos).
+- Formate com `gdformat <arquivo>` depois de editar scripts.
 - Você não vê o jogo rodando. Ao terminar uma tarefa, diga ao usuário **exatamente o que testar no editor** e o que deve acontecer.
 
 ## Fluxo de trabalho

@@ -1,7 +1,7 @@
 # Arquitetura e Convenções Técnicas
 
 ## Stack
-- **Engine:** Godot 4.x (preencher versão exata: `4.?.?-stable`)
+- **Engine:** Godot 4.7.2-stable
 - **Linguagem:** GDScript com tipagem estática
 - **Testes:** GUT (Godot Unit Test)
 - **Lint/format:** gdtoolkit (`gdlint`, `gdformat`)
@@ -21,7 +21,7 @@
 | `GameState` | `scripts/autoload/game_state.gd` | Estado da partida (pontuação, fase atual) |
 | `SceneManager` | `scripts/autoload/scene_manager.gd` | Troca de cenas e transições |
 | `AudioManager` | `scripts/autoload/audio_manager.gd` | Música e SFX |
-| `SaveManager` | `scripts/autoload/save_manager.gd` | Salvar/carregar (se necessário) |
+| `SaveManager` | `scripts/autoload/save_manager.gd` | Salvar/carregar (**ainda não criado**, só se necessário) |
 
 ## Organização de arquivos
 - Cena e script principal ficam lado a lado quando o script é exclusivo da cena: `scenes/actors/player/player.tscn` + `player.gd`.
@@ -42,12 +42,14 @@
 ## Ordem dentro de um script
 `class_name` → `extends` → docstring → sinais → enums → constantes → `@export` → variáveis públicas → privadas → `@onready` → `_ready()`/métodos built-in → métodos públicos → métodos privados.
 
-## Configurações do projeto (preencher)
-- Resolução base:
-- Stretch mode / aspect:
-- Filtro de textura padrão:
-- Camadas de física (nomear em Project Settings → Layer Names):
-  1. `world`
-  2. `player`
-  3. `enemies`
-  4. `pickups`
+## Configurações do projeto (atuais, ajuste quando o GDD definir)
+- Resolução base: 1280x720
+- Stretch mode / aspect: `canvas_items` / `keep`
+- Filtro de textura padrão: `Nearest` (pixel art). Para arte HD, mude para `Linear`.
+- Buses de áudio: Master → Music, SFX
+- Camadas de física 2D: 1 `world`, 2 `player`, 3 `enemies`, 4 `pickups`, 5 `hitbox`, 6 `hurtbox`
+- Input Map: `move_left/right/up/down` (WASD, setas, analógico, d-pad), `jump` (Espaço / A), `interact` (E / X), `pause` (Esc / Start)
+
+## Ferramentas
+- `./tools/check.sh`: importação + detecção de erros + lint + testes (o mesmo roda no GitHub Actions em `.github/workflows/ci.yml`)
+- GUT 9.7.1 em `addons/gut` (painel GUT no editor, parte inferior)

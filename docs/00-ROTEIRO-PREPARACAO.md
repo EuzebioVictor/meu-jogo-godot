@@ -23,24 +23,24 @@ Marque cada item ao concluir. **Critério de saída:** todos os itens das Etapas
 > Regra de ouro: corte o escopo pela metade, e depois corte de novo.
 
 ## Etapa 3 — Ambiente e ferramentas
-- [ ] Instalar o **Godot 4.x estável** (versão padrão, GDScript; a versão .NET só se for usar C#)
-- [ ] Anotar a versão exata em `03-ARQUITETURA.md` e no `CLAUDE.md`
+- [x] Instalar o **Godot 4.x estável** (versão padrão, GDScript; a versão .NET só se for usar C#)
+- [x] Anotar a versão exata em `03-ARQUITETURA.md` e no `CLAUDE.md`
 - [ ] Deixar o executável do Godot acessível no PATH como `godot` (o Claude Code usa no modo headless)
 - [ ] Instalar o Claude Code e testar no terminal da pasta do projeto
 - [ ] Instalar o git e criar o repositório (GitHub/GitLab) privado
-- [ ] (Opcional) Instalar `gdtoolkit` para lint e formatação: `pip install "gdtoolkit==4.*"`
+- [x] (Opcional) Instalar `gdtoolkit` para lint e formatação: `pip install "gdtoolkit==4.*"`
 - [ ] (Opcional) Editor externo: VS Code + extensão *godot-tools*
 
 ## Etapa 4 — Projeto base
-- [ ] Abrir o Godot → *Importar* → selecionar `project.godot` desta pasta
+- [ ] Abrir o Godot (4.7.2) → *Importar* → selecionar `project.godot` desta pasta
 - [ ] Conferir resolução, modo de esticamento (stretch) e filtro de texturas (pixel art = `Nearest`)
-- [ ] Configurar o **Input Map** com as ações do GDD (nunca usar teclas fixas no código)
-- [ ] Instalar o addon **GUT** (AssetLib) para testes
-- [ ] Rodar `godot --headless --quit` sem erros
-- [ ] Primeiro commit: `chore: estrutura inicial do projeto`
+- [x] Configurar o **Input Map** com as ações do GDD (nunca usar teclas fixas no código)
+- [x] Instalar o addon **GUT** (AssetLib) para testes
+- [x] Rodar `godot --headless --quit` sem erros
+- [x] Primeiro commit: `chore: estrutura inicial do projeto`
 
 ## Etapa 5 — Arquitetura e convenções
-- [ ] Revisar `03-ARQUITETURA.md` (organização de cenas, autoloads, comunicação por sinais)
+- [x] Revisar `03-ARQUITETURA.md` (organização de cenas, autoloads, comunicação por sinais)
 - [ ] Revisar e ajustar o `CLAUDE.md` (é o que o Claude Code lê em toda sessão)
 - [ ] Registrar decisões importantes em `docs/decisoes/` (um arquivo por decisão)
 
@@ -63,3 +63,18 @@ Marque cada item ao concluir. **Critério de saída:** todos os itens das Etapas
 4. **Commit a cada tarefa que funcionou.** Assim dá para desfazer facilmente quando algo der errado.
 5. **Cenas complexas:** o Claude edita `.tscn` em texto, mas para layout visual (UI, tilemaps, posicionamento) costuma ser melhor você montar no editor e pedir ao Claude os scripts.
 6. **Mantenha os docs atualizados:** quando uma decisão mudar, peça *"atualize o GDD e o CLAUDE.md com essa decisão"*.
+
+## Opcional: menos pedidos de permissão no Claude Code
+Crie `.claude/settings.json` na raiz do projeto com o conteúdo abaixo para liberar os comandos de verificação sem confirmação a cada uso:
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(./tools/check.sh)",
+      "Bash(godot --headless:*)",
+      "Bash(gdlint:*)",
+      "Bash(gdformat:*)"
+    ]
+  }
+}
+```
