@@ -41,6 +41,7 @@ Marque cada item ao concluir. **Critério de saída:** todos os itens das Etapas
 
 ## Etapa 5 — Arquitetura e convenções
 - [x] Revisar `03-ARQUITETURA.md` (organização de cenas, autoloads, comunicação por sinais)
+- [x] Agentes por setor, metodologia e quadro criados (`05-METODOLOGIA.md`, `06-SETORES.md`, `QUADRO.md`)
 - [ ] Revisar e ajustar o `CLAUDE.md` (é o que o Claude Code lê em toda sessão)
 - [ ] Registrar decisões importantes em `docs/decisoes/` (um arquivo por decisão)
 

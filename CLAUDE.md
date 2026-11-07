@@ -37,6 +37,13 @@ Antes de implementar algo, consulte:
 - Formate com `gdformat <arquivo>` depois de editar scripts.
 - Você não vê o jogo rodando. Ao terminar uma tarefa, diga ao usuário **exatamente o que testar no editor** e o que deve acontecer.
 
+## Agentes, setores e metodologia
+- Metodologia (Kanban + sprints, Definition of Ready/Done): `docs/05-METODOLOGIA.md`
+- Setores, agentes e quem é dono de cada pasta: `docs/06-SETORES.md`
+- Delegue aos agentes de `.claude/agents/` conforme o setor da tarefa e respeite as pastas de cada um.
+- Mantenha `docs/QUADRO.md` atualizado ao iniciar e concluir tarefas. Registre bugs em `docs/BUGS.md`.
+- Comandos: `/tarefa`, `/verificar`, `/status`, `/sprint`.
+
 ## Fluxo de trabalho
 - Uma tarefa pequena por vez. Para tarefas grandes, apresente um plano antes.
 - Ao concluir, sugira uma mensagem de commit no formato `tipo: descrição` (feat, fix, refactor, docs, chore, test).

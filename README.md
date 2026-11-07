@@ -15,7 +15,9 @@ Projeto Godot 4 desenvolvido com auxílio do Claude Code.
 ## Por onde começar
 1. Leia `docs/00-ROTEIRO-PREPARACAO.md`: é o checklist da fase de preparação.
 2. Preencha os documentos de `docs/` na ordem numérica.
-3. Só passe para o desenvolvimento quando o checklist estiver completo.
+3. Veja `docs/05-METODOLOGIA.md` e `docs/06-SETORES.md` para entender o fluxo com os agentes.
+4. Acompanhe o andamento em `docs/QUADRO.md` (ou com `/status` no Claude Code).
+5. Só passe para o desenvolvimento quando o checklist estiver completo.
 
 ## Estrutura
 | Pasta | Conteúdo |
@@ -27,3 +29,5 @@ Projeto Godot 4 desenvolvido com auxílio do Claude Code.
 | `tests/` | Testes automatizados (GUT) |
 | `addons/` | Plugins do Godot (GUT 9.7.1) |
 | `tools/` | Scripts de verificação |
+| `.claude/agents/` | Agentes por setor (produtor, designer, programador, UI, level, arte/áudio, QA, revisor) |
+| `.claude/commands/` | Comandos `/tarefa`, `/verificar`, `/status`, `/sprint` |
