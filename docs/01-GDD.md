@@ -8,7 +8,7 @@
 - **Tagline:** "Capa, espada e pólvora contra um Império que quer apagar a memória do povo."
 - **Pitch:** "Num estado alegórico inspirado no Rio de Janeiro de 1850–1950, onde um Império ditatorial tenta apagar a memória do povo, você é um fora da lei da resistência que atravessa cidades vivas e estradas perigosas para investigar e derrubar os Inquisidores do regime — com sabre, pistola de pederneira e uma magia ancestral rara."
 - **Gênero:** Action RPG isométrico de aventura / capa e espada, com combate em tempo real. Mundo fixo com cidades vivas + fortalezas procedurais (estrutura roguelite).
-- **2D / 3D:** 2.5D isométrico (técnica de implementação a definir)
+- **2D / 3D:** 2.5D isométrico, feito em **3D com câmera ortográfica fixa** (decisão `docs/decisoes/0002-2-5d-3d-ortografico.md`)
 - **Plataformas:** PC (Windows, Linux, Mac)
 - **Público-alvo:** a definir
 - **Influências de tom (não são jogos):**
@@ -125,7 +125,7 @@
 - Não é MMORPG.
 
 ## 12. Questões em aberto
-- **Técnica do 2.5D:** 2D isométrico com sprites (TileMap isométrico) ou 3D com câmera ortográfica? Afeta toda a arquitetura e o pipeline de arte.
+- ~~**Técnica do 2.5D**~~ → **decidido:** 3D + câmera ortográfica (ver `docs/decisoes/0002-2-5d-3d-ortografico.md`). Em aberto: personagens em modelo 3D low-poly ou sprites sobre cenário 3D.
 - **Fortalezas e morte:** o que se perde ao morrer numa fortaleza? O que persiste entre tentativas (estrutura roguelite)? Qual a condição de vitória final e de derrota?
 - **Inquisidor x boss:** o boss de cada fortaleza é o Inquisidor daquela cidade? Como a investigação se traduz na "forma diferente de ser derrotado"?
 - **Magia ancestral:** o que é, de onde vem, quais seus limites e como se encaixa no combate e na progressão?

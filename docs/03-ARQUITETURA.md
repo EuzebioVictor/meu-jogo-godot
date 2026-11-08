@@ -3,6 +3,7 @@
 ## Stack
 - **Engine:** Godot 4.7.2-stable
 - **Linguagem:** GDScript com tipagem estática
+- **Visual:** 3D com `Camera3D` ortográfica isométrica (2.5D). Ver `docs/decisoes/0002-2-5d-3d-ortografico.md`. **Pendência:** o projeto base (fase placeholder, camadas de física `2d_physics`, filtro de textura `Nearest`) ainda é 2D e será migrado para 3D numa tarefa própria.
 - **Testes:** GUT (Godot Unit Test)
 - **Lint/format:** gdtoolkit (`gdlint`, `gdformat`)
 - **Versionamento:** git (+ Git LFS se houver muitos assets binários grandes)
